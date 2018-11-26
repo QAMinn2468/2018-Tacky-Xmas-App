@@ -1,0 +1,11 @@
+body {
+  width: 100%;
+  background: no-repeat center/40% URL("./PlainTree.jpg");
+}
+
+audio {
+  display: inline-block;
+  border: crimson 7px ridge;
+  border-radius: 5px;
+  justify-content: center;
+}
