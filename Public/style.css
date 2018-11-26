@@ -37,12 +37,12 @@ audio {
 .elfFace {
   position: relative;
   bottom: -1.5em;
+  right:-3em;
   z-index: 5;
 }
 
 .elfBody {
   position: relative;
-  right: -2em;
 
   z-index: 2;
 }
