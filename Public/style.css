@@ -1,13 +1,15 @@
 body {
   width: 100%;
-  background: no-repeat center/40% URL("./PlainTree.jpg");
+  background: no-repeat center/50% URL("./PlainTree.jpg");
 }
+
+
 
 audio {
   display: inline-block;
   border: crimson 7px ridge;
   border-radius: 5px;
-  justify-content: center;
+  justify-content: center, bottom;
 }
 /* **************      ELF    *********************************************** */
 
@@ -16,15 +18,22 @@ audio {
 }
 
 .elf1 {
-  width: 50%;
+  width: 30%;
   grid-column-start: 1;
   grid-column-end: 2;
 }
 
-.elf2 {
-  width: 50%;
-  grid-column-start: 2;
+.notElf {
+  padding-left: 5%;
+  padding-right: 5%;
+  grid-column-start:  2;
   grid-column-end: 3;
+}
+
+.elf2 {
+  width: 30%;
+  grid-column-start: 3;
+  grid-column-end: 4;
 }
 
 .elfHat {
@@ -43,6 +52,5 @@ audio {
 
 .elfBody {
   position: relative;
-
   z-index: 2;
 }
