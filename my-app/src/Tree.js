@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './App.css'
 
 /*********************************Start of Component***************************/
 class Tree extends Component {
