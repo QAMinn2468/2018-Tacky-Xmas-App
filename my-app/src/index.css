@@ -1,11 +1,13 @@
 body {
   width: 100%;
-  background: no-repeat center/50% URL("./PlainTree.jpg");
+  background-color: palegreen;
 }
 
 footer {
   background-color: aqua;
   text-align: center;
+  height: 2em;
+
 }
 
 

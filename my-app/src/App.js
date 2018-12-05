@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
 import Banner from './Banner.js'
-// import Sidebar from './sidebar.js'
+// import Sidebar from './Sidebar.js'
+import Tree from './Tree.js'
 // <Sidebar />
 
 
@@ -14,6 +15,7 @@ class App extends Component {
     return (
       <div className="App">
       <Banner />
+      <Tree />
 
       </div>
     );

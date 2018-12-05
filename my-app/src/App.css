@@ -1,1 +1,11 @@
+.banner {
+  background-color: lightpink;
+  text-align: center;
+  height: 2em;
+}
 
+.tree {
+  background-color: bisque;
+  /* background: no-repeat center/50% URL("./PlainTree.jpg"); */
+
+}
