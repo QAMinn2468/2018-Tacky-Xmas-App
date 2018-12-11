@@ -17,12 +17,12 @@
 H1{
 	text-align: center;
 	padding: 30PX;
-	color: #FF333C;
+	color: darkred;
 	font-family: 'Dokdo', cursive;
 }
 
 h2 {
-	color: blue;
+	color: cyan;
 	margin: 30px;
 	font-family: 'Dokdo', cursive;
 }
@@ -44,7 +44,7 @@ ol {
 .item3 {
 	grid-column: 2 / span 4;
 	grid-row: 2 / span 4;
-	background-image: no-repeat center url(BasicTree.jpg);
+	background-image: url('./HappyTree.jpg');
 }
 
 .item4 {
@@ -65,8 +65,8 @@ ol {
 
 .elf1 {
   width: 30%;
-  grid-column-start: 1;
-  grid-column-end: 2;
+  grid-column-start: 0;
+  grid-column-end: 1;
 	margin: 0;
 
 }
