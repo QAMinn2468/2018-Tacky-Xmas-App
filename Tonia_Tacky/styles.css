@@ -19,6 +19,8 @@ H1{
 	padding: 30PX;
 	color: darkred;
 	font-family: 'Dokdo', cursive;
+	animation: widen 15s infinite;
+
 }
 
 h2 {
@@ -68,6 +70,9 @@ ol {
   grid-column-start: 0;
   grid-column-end: 1;
 	margin: 0;
+	animation: roll 3s infinite;
+
+
 
 }
 
@@ -76,6 +81,10 @@ ol {
   grid-column-start: 2;
   grid-column-end: 3;
 	margin: 0;
+	animation: nroll 3s infinite;
+
+
+
 
 }
 
@@ -96,4 +105,37 @@ ol {
 .elfBody {
   position: relative;
   z-index: 2;
+}
+
+@keyframes roll {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes nroll {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes widen {
+	0% {
+		transform: scale(100%);
+	}
+	30% {
+		transform: scale(110%);
+	}
+	60% {
+		transform: scale(135%);
+	}
+	100% {
+		transform: scale(150%);
+	}
 }
