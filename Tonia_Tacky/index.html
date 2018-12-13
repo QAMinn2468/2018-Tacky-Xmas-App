@@ -11,6 +11,7 @@
 </head>
 <body>
  	<div class="container">
+
  		<div class="item item1">
  			<H1>Doodle WHILE YOU WAIT (GO CRAZY)!!!!!!!!!!!!</H1>
  		</div>
@@ -29,40 +30,89 @@
 
  		</div>
 		<div class="item item3 elfSection">
-			<div class="elf1">
+			<canvas id="draw"></canvas>
 
-			<div >
-			  <img src="./HAT.jpg" class="elf elfHat">
-			</div>
+			<script>
+			const canvas = document.querySelector('#draw');
+			const ctx = canvas.getContext('2d');
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+			ctx.strokeStyle = '#BADA55';
+			ctx.lineJoin = 'round';
+			ctx.lineCap = 'round';
+			ctx.lineWidth = 30;
+			// ctx.globalCompositeOperation = 'multiply'    // this can be set to various values - MDN
+			let isDrawing = false;    //set default to false. so random mouse over does not effect.
+			let lastX = 0;            // sets start point for click down/draw event.
+			let lastY = 0;
+			let hue = 0;   // start point for color.
+			let direction = true;
+			function draw(e) {
+			if (!isDrawing) return;  // prevents drawing if not mouse down.
+			console.log(e);
+			ctx.strokeStyle = `hsl(${hue}, 70%, 50%)`;
+			ctx.beginPath();
+			ctx.moveTo(lastX, lastY);
+			ctx.lineTo(e.offsetX, e.offsetY);
+			ctx.stroke();
+			[lastX, lastY] = [e.offsetX, e.offsetY];
+			hue = hue + 10;                                    // Increased hue step.
+			if (hue >= 360) {
+			hue = 0;                           // returns to "Start"
+			}
+			if (ctx.lineWidth > 70 || ctx.lineWidth < 3) {
+			direction = !direction;
+			}
+			if (direction) {
+			ctx.lineWidth = ctx.lineWidth + 2;   // I increased both up and dow steps.
+			} else {
+			ctx.lineWidth = ctx.lineWidth - 2;
+			}
+			}
+			canvas.addEventListener('mousedown', (e) => {
+			isDrawing = true;
+			[lastX, lastY] = [e.offsetX, e.offsetY];      //breaks line, So line starts fresh
+			});
+			canvas.addEventListener('mousemove', draw);    //run draw function when mouse is moved.
+			canvas.addEventListener('mouseup', () => isDrawing = false);
+			canvas.addEventListener('mouseout', () => isDrawing = false);
 
-			<div >
-			  <img src="./Tface.png" class="elf elfFace">
-			</div>
-
-			<div >
-			  <img src="./headlessElf.png" class="elf elfBody">
-			</div>
-			</div>
-
-
-			<div class="elf2">
-
-			<div >
-			  <img src="./HAT.jpg" class="elf elfHat">
-			</div>
-
-			<div >
-			  <img src="./Kface2.jpg" class="elf elfFace">
-			</div>
-
-			<div >
-			  <img src="./headlessElf.png" class="elf elfBody">
-			</div>
-			</div>
+			//https://github.com/QAMinn2468/WesBos-JavaScript30.D8.-HTML5-Canvas/blob/master/index.html
+			</script>
 
 
 
 
+		</div>
+		<div class="elf1">
+
+		<div >
+			<img src="./HAT.jpg" class="elf elfHat">
+		</div>
+
+		<div >
+			<img src="./Tface.png" class="elf elfFace">
+		</div>
+
+		<div >
+			<img src="./headlessElf.png" class="elf elfBody">
+		</div>
+		</div>
+
+
+		<div class="elf2">
+
+		<div >
+			<img src="./HAT.jpg" class="elf elfHat">
+		</div>
+
+		<div >
+			<img src="./Kface2.jpg" class="elf elfFace">
+		</div>
+
+		<div >
+			<img src="./headlessElf.png" class="elf elfBody">
+		</div>
 		</div>
 		<div class="item item4">Copyright 2018 Tack-A-Thon</br> Kimberly & Tonia Tacky Designs</div>
 		<div class="notElf">
@@ -72,6 +122,7 @@
 
 
 <script src="https://unpkg.com/snowworker@1.0.9/snow.js"></script>
+
 
 
 
