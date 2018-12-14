@@ -23,6 +23,19 @@ H1{
 
 }
 
+.blink {
+    animation-duration: 1s;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(2, start);
+}
+
+@keyframes blink {
+    80% {
+        visibility: hidden;
+    }
+}
+
 h2 {
 	color: cyan;
 	margin: 30px;
@@ -71,8 +84,7 @@ ol {
   grid-column-end: 1;
 	margin: 0;
 	animation: roll 3s infinite;
-
-
+	transform-origin: top center;
 
 }
 
@@ -82,8 +94,7 @@ ol {
   grid-column-end: 3;
 	margin: 0;
 	animation: nroll 3s infinite;
-
-
+	transform-origin: top center;
 
 
 }
